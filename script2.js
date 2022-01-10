@@ -28,7 +28,5 @@ function ajouter() {
     let login = document.getElementById("login").value;
     let passWord = document.getElementById("mdp").value;
     list.push([name, fstName, login, passWord]);
-    addToList.innerHTML = `name: ${name}; prenom: ${fstName}; login: ${login}; mot de passe: ${passWord};`
-    nbrCpt++;
-    error.innerHTML = "";
+    addToList.innerHTML = `name: ${list[name]}; prenom: ${list[fstName]}; login: ${list[login]}; mot de passe: ${list[passWord]};`
 }
