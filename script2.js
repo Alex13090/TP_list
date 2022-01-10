@@ -2,6 +2,7 @@
 //Variable qui récupére le modal
 let modal = document.getElementById("myModal");
 //Récupération du <span> pour fermer le modal
+/*
 let span = document.getElementsByClassName("close")[0];
 //fonction fermeture du modal quand l'utilisateur clic sur le <span> (x)
 span.onclick = function() {
@@ -15,13 +16,19 @@ function openModal(e){
     //injection du bouton dans le paragraphe
     btUpdate.innerHTML = "<input type='button' value='Modifier' onclick='updateUser("+e+")'></input>";
 }
-
-let list = document.getElementById("resultat");
+*/
+let nbrCpt = document.getElementById("nbrCompte");
+let list = [];
+let addToList = document.getElementById("resultat");
+let error = document.getElementById("error");
 
 function ajouter() {
     let name = document.getElementById("name").value;
     let fstName = document.getElementById("firstname").value;
     let login = document.getElementById("login").value;
     let passWord = document.getElementById("mdp").value;
-    list.textContent = `name: ${name}; prenom: ${fstName}; login: ${login}; mot de passe: ${passWord};`
+    list.push([name, fstName, login, passWord]);
+    addToList.innerHTML = `name: ${name}; prenom: ${fstName}; login: ${login}; mot de passe: ${passWord};`
+    nbrCpt++;
+    error.innerHTML = "";
 }
